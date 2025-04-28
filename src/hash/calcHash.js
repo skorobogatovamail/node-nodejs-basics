@@ -2,8 +2,6 @@ import { dirname, join } from 'path'
 import { fileURLToPath } from 'url';
 import { createReadStream } from 'fs';
 import { createHash } from 'crypto';
-import { error } from 'console';
-
 
 const calculateHash = async () => {
     return new Promise((resolve, reject) => {
@@ -28,7 +26,7 @@ const calculateHash = async () => {
             });
 
         } catch (error) {
-            throw error
+            reject(error)
         }
     })
 
